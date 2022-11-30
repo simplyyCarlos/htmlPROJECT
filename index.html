@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="title" href="#">SimplyyAnime</a>
+            <div class="nav-links">
+            <ul>
+                <li class="active"><a href="#">Accueil</a></li>
+                <li><a href="#">Présentation</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Abonnez vous</a></li>
+                <li><a href="#">Statistiques</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            </div>
+        </div>
+        <img src="img/menu.png" alt="bouton-hamburger" class="menu-hamburger">
+    </nav>
+    
+    <div class="main-page-content">
+        prout
+    </div>
+    
+</body>
+    <script>
+        const menuHamburger = document.querySelector(".menu-hamburger")
+        const navLink = document.querySelector(".nav-links")
+
+        menuHamburger.addEventListener('click',()=>{
+            navLink.classList.toggle('mobile-menu')
+        })
+    </script>
+</html>

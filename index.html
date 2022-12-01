@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <a class="title" href="#">SimplyyAnime</a>
-            <div class="nav-links">
-            <ul>
-                <li class="active"><a href="#">Accueil</a></li>
-                <li><a href="#">Présentation</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Abonnez vous</a></li>
-                <li><a href="#">Statistiques</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-            </div>
-        </div>
-        <img src="img/menu.png" alt="bouton-hamburger" class="menu-hamburger">
-    </nav>
-    
-    <div class="main-page-content">
-        prout
-    </div>
-    
-</body>
-    <script>
-        const menuHamburger = document.querySelector(".menu-hamburger")
-        const navLink = document.querySelector(".nav-links")
 
-        menuHamburger.addEventListener('click',()=>{
-            navLink.classList.toggle('mobile-menu')
-        })
-    </script>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style1.css">
+<title>Document</title>
+</head>
+
+<body>
+<header>
+    <a class="title" href="#">JulesValette</a>
+    <ul>
+        <li class="active"><a href="#">Accueil</a></li>
+        <li><a href="#">Présentation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="abonnement.html">Abonnement</a></li>
+        <li><a href="#">Statistiques</a></li>
+        <li class="multi-choice-parent">
+            <a href="blog.html">Blog</a>
+            <ul class="multi-choice">
+                <li class="dropdown-menu-choice1"><a href="articles/article1.html">Article 1</a></li>
+                <li class="dropdown-menu-choice2"><a href="articles/article2.html">Article 2</a></li>
+                <li class="dropdown-menu-choice3"><a href="articles/article3.html">Article 3</a></li>
+                <li class="dropdown-menu-choice4"><a href="articles/article4.html">Article 4</a></li>
+            </ul>
+        </li>
+    </ul>
+    <img src="img/menu.png" alt="bouton-hamburger" class="menu-hamburger">
+    <img src="img/account.png" alt="bouton-profil" class="menu-profil">
+</header>
+<main class="main-index">
+    <h1>Bienvenue sur mon site personnel...</h1>
+    <section class="container">
+        <article class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, delectus?</p>
+        <img src="img/bender.jpg" alt="Bender face" class="card-img">
+        </article>
+        <article class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, delectus?</p>
+        <img src="img/buzz.jpg" alt="Buzz l'éclair face" class="card-img">
+        </article>
+        <article class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, delectus?</p>
+        <img src="img/pepe.jpg" alt="Pepe the frog face" class="card-img">
+        </article>
+    </section>
+</main>
+<footer class="footer-index">
+    <h2>Copyright © 2022 JulesValette</h2>
+    <img src="img/mail.png" alt="mail icon" class="footer-img">
+    <a href="https://github.com/simplyyCarlos/htmlPROJECT"><img src="img/github.png"  alt="github icon" class="footer-img">
+</footer>
+<script src="js/app.js"></script>
+</body>
+
+
 </html>

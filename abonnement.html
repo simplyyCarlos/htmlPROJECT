@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style1.css">
+<title>Document</title>
+</head>
+<body>
+<header>
+<a class="title" href="#">JulesValette</a>
+<ul>
+<li ><a href="index.html">Accueil</a></li>
+<li><a href="#">Présentation</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li class="active"><a href="#">Abonnement</a></li>
+<li><a href="#">Statistiques</a></li>
+<li class="multi-choice-parent">
+    <a href="blog.html">Blog</a>
+    <ul class="multi-choice">
+        <li class="dropdown-menu-choice1"><a href="articles/article1.html">Article 1</a></li>
+        <li class="dropdown-menu-choice2"><a href="articles/article2.html">Article 2</a></li>
+        <li class="dropdown-menu-choice3"><a href="articles/article3.html">Article 3</a></li>
+        <li class="dropdown-menu-choice4"><a href="articles/article4.html">Article 4</a></li>
+    </ul>
+</li>
+</ul>
+<img src="../img/menu.png" alt="bouton-hamburger" class="menu-hamburger">
+<img src="../img/account.png" alt="bouton-profil" class="menu-profil">
+</header>
+<main class="parent-abonnement">
+<form>
+    <label for="email-sub">Adresse E-mail</label>
+    <div>
+        <input type="email" id="email-sub" name="email">
+        <p id="obligatoire"></p>
+    </div>
+
+
+    <label for="password">Mot de Passe</label>
+    <div>
+        <input id="password" type="password" name="password">
+        <p id="mdp-error"></p>
+    </div>
+
+    <label for="name">Nom</label>
+    <div>
+        <input id="name" name="name">
+        <p id="name-error"></p>
+    </div>
+
+    <label for="surname">Prénom</label>
+    <div>
+        <input id="surname" name="surname">
+        <p id="surname-error"></p>
+    </div>
+
+    <label for="birth">Date de Naissance</label>
+    <div>
+        <input type="date" id="birth" name="birth">
+        <p id="date-error"></p>
+    </div>
+
+    <label for="adr">Adresse Postal</label>
+    <div>
+        <input id="adr" name="adr">
+        <p id="post-error"></p>
+    </div>
+
+    <label for="cpostal">Code Postal</label>
+    <div>
+        <input maxlength="5" minlength="5" id="cpostal" name="cpostal">
+        <p id="code-error"></p>
+    </div>
+    
+
+    <label for="ville">Ville</label>
+    <div>
+        <input id="ville" name="ville">
+        <p id="city-error"></p>
+    </div>
+
+    <label for="sexe">Sexe</label>
+    <div>
+        <select name="sexe" id="sexe">
+            <option value="">-Choisissez une option-</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="helico">Hélicoptère</option>
+        </select>
+        <p id="sexe-error"></p>
+    </div>
+
+    <label for="photo">Photo</label>
+    <input type="file" accept=".png,.jpg,.gif,.webp" id="photo" name="photo">
+    <!-- pas de gestion d'erreur car pas obligatoire -->
+
+    <label for="loisir">Loisirs (CTRL + CLIC pour selection multiple)</label>
+    <div>
+        <select id ="loisir" name="loisir" multiple size="4">
+            <optgroup label="Sports">
+            <option value="foot">Football</option>
+            <option value="basket">Basketball</option>
+            <option value="baseball" disabled>Baseball</option>
+            </optgroup>
+            <optgroup label="Musique">
+                <option value="guitare">Guitare</option>
+                <option value="batterie">Batterie</option>
+                <option value="violon" disabled>Violon</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <label for="cpref">Couleur préféré</label>
+    <input type="color" id="cpref" name="cpref">
+
+    <!-- <a onclick="subsubmit()" class="button">Envoyé</a> -->
+    <button class="button" id="btn" type="submit" onclick="subsubmit()">Envoyé</button>
+</form>
+
+</main>
+<footer class="footer-abonnement">
+<h2>Copyright © 2022 JulesValette</h2>
+<img src="../img/mail.png" alt="mail icon" class="footer-img">
+<a href="https://github.com/simplyyCarlos/htmlPROJECT"><img src="../img/github.png"  alt="github icon" class="footer-img"></a>
+</footer>
+<script src="js/app.js"></script>3
+<script>
+    console.log('function exercise 3 apply');
+    var contactbutton = document.getElementById('submit-button-contact');
+    var obli = document.getElementById('obligatoire');
+    var mdp = document.getElementById('mdp-error');
+    var namee = document.getElementById('name-error');
+    var surname = document.getElementById('surname-error');
+    var birthh = document.getElementById('date-error');
+    var post = document.getElementById('post-error');
+    var code = document.getElementById('code-error');
+    var ville = document.getElementById('city-error');
+
+    var btn = document.getElementById('btn');
+
+    function containsNumbers(str) {
+        return /[0-9]/.test(str);
+    }
+
+    function subsubmit(){
+        console.log('verification apply');
+        
+        if(document.getElementById('email-sub').value == ''){
+            obli.innerHTML = 'champs obligatoire';
+        } else{
+            obli.innerHTML = '';
+        }
+        
+        if(document.getElementById('password').value == ''){
+            mdp.innerHTML = 'champs obligatoire';
+        } else{
+            mdp.innerHTML = '';
+        }
+        
+        if(document.getElementById('name').value == ''){
+            namee.innerHTML = 'champs obligatoire';
+        } else if(containsNumbers(document.getElementById('name').value)){
+            namee.innerHTML = 'Erreur de saisie'; //chiffre(s) non acceptés dans le champs 'Nom'
+        } else{
+            namee.innerHTML = '';
+        }
+
+        if(document.getElementById('surname').value == ''){
+            surname.innerHTML = 'champs obligatoire';
+        } else if(containsNumbers(document.getElementById('surname').value)){
+            surname.innerHTML = 'Erreur de saisie'; //chiffre(s) non acceptés dans le champs 'Prenom'
+        } else{
+            surname.innerHTML = '';
+        }
+
+        if(document.getElementById('birth').value == ''){
+            birthh.innerHTML = 'champs obligatoire';
+        } else{
+            birthh.innerHTML = '';
+        }
+
+        if(document.getElementById('adr').value == ''){
+            post.innerHTML = 'champs obligatoire';
+        } else{
+            post.innerHTML = '';
+        }
+
+        if(document.getElementById('cpostal').value == ''){
+            code.innerHTML = 'champs obligatoire';
+        } else if(document.getElementById('cpostal').value <= 0){
+            code.innerHTML = 'Nombre négatif';
+        } else if((document.getElementById('cpostal').value).length < 5){
+            code.innerHTML = 'Code Postal incomplet';
+        } else {
+            code.innerHTML = '';
+        }
+
+        if(document.getElementById('ville').value == ''){
+            ville.innerHTML = 'champs obligatoire';
+        } else{
+            ville.innerHTML = '';
+        }
+
+        event.preventDefault(); //desactive le redirect du button pour laisser la verification statique du form s'effectuer
+    }
+</script>
+</body>
+</html>
